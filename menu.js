@@ -30,7 +30,14 @@
     'kids'
 */
 
-//CODE HERE
+const pizza = {
+    name: `Barbecue Chicken`,
+    price: 9.99,
+    category: `2nd Entree`,
+    popularity: 2,
+    rating: 4.5,
+    tags: [`Meat-lover, sweet, low-fat`]
+}
 
 
 
@@ -42,8 +49,7 @@
     Use dot notation to access the value.
 */
 
-//CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -148,7 +154,7 @@
     Return the filtered array from the entire function
 */
 
-//CODE HERE
+
 
 
 /*
