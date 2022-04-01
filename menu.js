@@ -146,10 +146,10 @@ const foodArr = [
     your food objects has.
 */
 
-const tagChecker = (pizza) => pizza.tags.includes(`high-protein`)
+// const tagChecker = (pizza) => pizza.tags.includes(`high-protein`)
 
-const filteredFood = foodArr.filter(tagChecker)
-// console.log(filteredFood)
+const filteredFood = foodArr.filter((pizza) => pizza.tags.includes(`high-protein`))
+console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
