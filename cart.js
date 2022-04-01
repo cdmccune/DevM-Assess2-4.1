@@ -33,10 +33,10 @@ const cart = [
     }
 ]
 
-//CODE HERE
+const sum = (total, each) => total+each.price
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+const summedPrice = cart.reduce(sum,0)
+// console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -53,8 +53,8 @@ const cart = [
     decimals, for example: .06 for a 6% tax.
 */
 
-//CODE HERE
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => cartTotal*(tax+1)-couponValue
+// console.log(calcFinalPrice(10,2,.09));
 
 
 //////////////////PROBLEM 3////////////////////
@@ -78,7 +78,10 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+    Income - This is important because how much and what they buy is heavily affected by this.
+    Hobby - Their main hobby will affect whihc department they will shop in.
+    Gender - Many buying habits can be predicted based off of gender
+    Age - Depending on what age, they might be more or less prone to spending in large amounts.
 
 */
 
@@ -87,4 +90,11 @@ const cart = [
     guidelines.
 */
 
-//CODE HERE
+Customer = {
+    Income: 100000,
+    Hobby: `Fishing`,
+    Gender: `Male`,
+    Age: 35
+}
+
+// console.log(Customer)
