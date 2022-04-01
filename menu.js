@@ -36,7 +36,7 @@ const pizza = {
     category: `2nd Entree`,
     popularity: 2,
     rating: 4.5,
-    tags: [`Meat-lover, sweet, low-fat`]
+    tags: [`Meat-lover`, `sweet`, `low-fat`]
 }
 
 
@@ -49,7 +49,7 @@ const pizza = {
     Use dot notation to access the value.
 */
 
-console.log(pizza.popularity)
+// console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -58,7 +58,7 @@ console.log(pizza.popularity)
     get the value.
 */
 
-//CODE HERE
+// console.log(pizza.tags[1]);
 
 
 /*
@@ -68,8 +68,8 @@ console.log(pizza.popularity)
     Print the value of your new price variable.
 */
 
-//CODE HERE
-
+const {price} = pizza
+// console.log(price)
 
 /*
     Fourth, and last, destructure the category
@@ -78,8 +78,8 @@ console.log(pizza.popularity)
     Print the value of your category variable. 
 */
 
-//CODE HERE
-
+const {category} = pizza
+// console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -93,7 +93,44 @@ console.log(pizza.popularity)
     data in some functions that you'll write.
 */
 
-//CODE HERE
+const foodArr = [
+    {
+        name: `Pineapple`,
+        price: 9.99,
+        category: `Entree`,
+        popularity: 1000,
+        rating: 0.01,
+        tags: [`terrible`, `should never be put on pizza`, `low-fat`]
+    }, {
+        name: `Pepperoni`,
+        price: 10.99,
+        category: `Entree`,
+        popularity: 1,
+        rating: 5,
+        tags: [`high-protein`, `tasty`, `classic`]
+    }, {
+        name: `Sausage`,
+        price: 11.99,
+        category: `Appetizer`,
+        popularity: 4,
+        rating: 4,
+        tags: [`decent`, `high-protein`, `boujie`]
+    }, {
+        name: `Meat-Lover`,
+        price: 14.99,
+        category: `Whole Meal`,
+        popularity: 3,
+        rating: 4.3,
+        tags: [`high-protein`, `thick`, `high-fat`]
+    }, {
+        name: `Stuffed Crust`,
+        price: 13.99,
+        category: `2nd Entree`,
+        popularity: 5,
+        rating: 3,
+        tags: [`high-calorie`, `innovative`, `unique`]
+    }
+]
 
 
 
@@ -109,10 +146,10 @@ console.log(pizza.popularity)
     your food objects has.
 */
 
-//CODE HERE
+const tagChecker = (pizza) => pizza.tags.includes(`high-protein`)
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+const filteredFood = foodArr.filter(tagChecker)
+// console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -147,15 +184,26 @@ console.log(pizza.popularity)
         if it is, return objects whose value for the given
         property is greater than the `number` passed in
 
-        If the type isn't `below`, return objects whose
+        If the type is `below`, return objects whose
         value for the given property is less than the 
         `number` passed in
     
     Return the filtered array from the entire function
 */
 
+const filterByProperty = (property, number, type) => {
 
-
+    const filteredFood = foodArr.filter(pizza => {
+        if ((type === `above`) && (pizza[`${property}`] > number)) {
+            return true
+        } else if ((type === `below`) && (pizza[`${property}`] < number)){
+            return true
+        } else {
+            return false
+        }
+    })
+    return filteredFood
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -164,4 +212,4 @@ console.log(pizza.popularity)
     You'll have to console.log to see the filtered array
 */
 
-//CODE HERE
+// console.log(filterByProperty(`rating`,`3.5`,`above`))
